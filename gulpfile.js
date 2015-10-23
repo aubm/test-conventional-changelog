@@ -3,7 +3,7 @@ var util = require("gulp-util");
 var fs = require("fs");
 var conventionalChangelog = require("conventional-changelog");
 
-var argv = util.argv;
+var argv = util.env;
 
 var releaseCount = !!argv.env ? argv.env : '1';
 
