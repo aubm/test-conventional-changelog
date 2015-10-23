@@ -72,4 +72,11 @@ gulp.task('push-tag', function(cb) {
 });
 
 
-gulp.task('release', ['bump', 'changelog', 'commit-changelog', 'create-version-tag', 'push-master', 'push-tag']);
+gulp.task('release', [
+    'bump',
+    'changelog',
+    'commit-changelog',
+    'create-version-tag',
+    'push-master',
+    'push-tag'
+]);
