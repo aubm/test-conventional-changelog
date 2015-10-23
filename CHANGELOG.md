@@ -1,3 +1,13 @@
+<a name="1.0.21"></a>
+## [1.0.21](//compare/1.0.20...v1.0.21) (2015-10-23)
+
+
+### Features
+
+* **release:** pass release type in arg a85e6e2
+
+
+
 <a name="1.0.20"></a>
 ## [1.0.20](//compare/1.0.19...v1.0.20) (2015-10-23)
 
