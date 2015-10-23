@@ -39,7 +39,7 @@ gulp.task('bump', function(cb) {
 gulp.task('changelog',  function(cb) {
     gulp.src('CHANGELOG.md', { buffer: false })
         .pipe(conventionalChangelog({ preset: 'angular' }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./'))
         .on('end', cb);
 });
 
@@ -50,7 +50,7 @@ gulp.task('commit-changelog', function(cb) {
         .on('end', cb);
 });
 
-gulp task('create-version-tag', function(cb) {
+gulp.task('create-version-tag', function(cb) {
     git.tag(pkg.version, 'release ' + pkg.version, function(err) {
         if (err) throw err;
         cb();
