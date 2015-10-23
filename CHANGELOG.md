@@ -1,3 +1,14 @@
+<a name="1.0.8"></a>
+## [1.0.8](//compare/v1.0.7...v1.0.8) (2015-10-23)
+
+
+### Features
+
+* **content:** add fresh content f529e79
+* **content:** add new content ec6a068
+
+
+
 <a name="1.0.7"></a>
 ## [1.0.7](//compare/v1.0.6...v1.0.7) (2015-10-23)
 
