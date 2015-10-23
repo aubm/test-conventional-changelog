@@ -11,7 +11,7 @@ var argv = util.env;
 
 var bumpType = !!argv.type ? argv.env :
 
-gulp.task('bump', function() {
+gulp.task('bump', function(cb) {
     var type = argv.type;
     type = 'patch';
 
@@ -30,29 +30,46 @@ gulp.task('bump', function() {
    */
 
     pkg.version = semver.inc(pkg.version, type);
-    return gulp.src(['package.json'])
+    gulp.src(['package.json'])
         .pipe(bump({ version: pkg.version }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./'))
+        .on('end', cb);
 });
 
-gulp.task('changelog', ['bump'],  function() {
-    return gulp.src('CHANGELOG.md', { buffer: false })
+gulp.task('changelog',  function(cb) {
+    gulp.src('CHANGELOG.md', { buffer: false })
         .pipe(conventionalChangelog({ preset: 'angular' }))
         .pipe(gulp.dest('./'));
+        .on('end', cb);
 });
 
-gulp.task('release', ['changelog'],  function(cb) {
+gulp.task('commit-changelog', function(cb) {
     gulp.src(['CHANGELOG.md', 'package.json'])
         .pipe(git.add())
-        .pipe(git.commit('chore(release): ' + pkg.version));
+        .pipe(git.commit('chore(release): ' + pkg.version))
+        .on('end', cb);
+});
 
+gulp task('create-version-tag', function(cb) {
     git.tag(pkg.version, 'release ' + pkg.version, function(err) {
         if (err) throw err;
+        cb();
     });
+});
 
+gulp.task('push-master', function(cb) {
     git.push('origin', 'master', function(err) {
         if (err) throw err;
+        cb();
     });
-
-    cb();
 });
+
+gulp.task('push-tag', function(cb) {
+    git.push('origin', pkg.version, function(err) {
+        if (err) throw err;
+        cb();
+    });
+});
+
+
+gulp.task('release', ['bump', 'changelog', 'commit-changelog', 'create-version-tag', 'push-master', 'push-tag']);
