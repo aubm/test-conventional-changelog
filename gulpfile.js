@@ -11,24 +11,18 @@ var runSequence = require("run-sequence");
 var argv = util.env;
 
 gulp.task('bump', function(cb) {
-    var type = argv.type;
-    type = 'patch';
-
     if (!semver.valid(pkg.version)) {
         util.log(util.colors.red('Error: Invalid version number - ' + pkg.version));
         return process.exit(1);
     }
 
-    /*
     var hasValidType = !!argv.type ? !!argv.type.match(new RegExp(/major|minor|patch/)) : false;
-
     if (!hasValidType) {
         util.log(util.colors.red('Error: Required bump \'type\' is missing! Usage: npm release --type=(major|minor|patch)'));
         return process.exit(1);
     }
-   */
 
-    pkg.version = semver.inc(pkg.version, type);
+    pkg.version = semver.inc(pkg.version, argv.type);
     gulp.src(['package.json'])
         .pipe(bump({ version: pkg.version }))
         .pipe(gulp.dest('./'))
