@@ -1,3 +1,13 @@
+<a name="1.0.20"></a>
+## [1.0.20](//compare/1.0.19...v1.0.20) (2015-10-23)
+
+
+### Features
+
+* **release:** use run-sequence to run tasks sync 3c4b148
+
+
+
 <a name="1.0.18"></a>
 ## [1.0.18](//compare/1.0.19...v1.0.18) (2015-10-23)
 
