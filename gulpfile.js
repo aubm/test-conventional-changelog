@@ -51,7 +51,7 @@ gulp.task('create-version-tag', function(cb) {
 });
 
 gulp.task('push-master', function(cb) {
-    git.push('origin', 'master --tags', function(err) {
+    git.push('origin', 'master', { args: '--tags' }, function(err) {
         if (err) throw err;
         cb();
     });
