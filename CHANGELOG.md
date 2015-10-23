@@ -8,6 +8,8 @@
 * **content:** add a new line in my-file.txt 1b9c305
 * **content:** add content 453e13d
 * **content:** add new content 734bd2a
+* **content:** add quality content 331ad49
+* **content:** content ... content everywhere bfa74ab
 * **global:** the first commit a486104
 
 
