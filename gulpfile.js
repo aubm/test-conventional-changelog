@@ -5,6 +5,7 @@ var pkg = require("./package.json");
 var fs = require("fs");
 var conventionalChangelog = require("gulp-conventional-changelog");
 var bump = require("gulp-bump");
+var git = require("gulp-git");
 
 var argv = util.env;
 
@@ -41,23 +42,17 @@ gulp.task('changelog', ['bump'],  function() {
 });
 
 gulp.task('release', ['changelog'],  function(cb) {
-    var exec = require("child_process").exec;
+    gulp.src(['CHANGELOG.md', 'package.json'])
+        .pipe(git.add())
+        .pipe(git.commit('chore(release): ' + pkg.version));
 
-    var commitMessage = 'chore(release): ' + pkg.version;
+    git.tag(pkg.version, 'release ' + pkg.version, function(err) {
+        if (err) throw err;
+    });
 
-    exec('git add CHANGELOG.md package.json', childProcessCompleted);
-    exec('git commit -m "' + commitMessage + '" --no-verify', childProcessCompleted);
-    exec('git tag -a ' + pkg.version + ' -m "release ' + pkg.version + '"');
-    exec('git push origin master', childProcessCompleted);
+    git.push('origin', 'master', function(err) {
+        if (err) throw err;
+    });
 
     cb();
-
-    function childProcessCompleted(error, stdout, stderr) {
-        util.log('stdout: ' + stdout);
-        util.log('stderr: ' + stderr);
-        if (error !== null) {
-            return cb(error);
-        }
-
-    }
 });
