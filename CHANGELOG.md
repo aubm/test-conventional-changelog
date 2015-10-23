@@ -1,5 +1,5 @@
-<a name="1.0.3"></a>
-## 1.0.3 (2015-10-23)
+<a name="1.0.4"></a>
+## 1.0.4 (2015-10-23)
 
 
 ### Features
@@ -11,8 +11,10 @@
 * **content:** add quality content 331ad49
 * **content:** added content, content, content 57a121f
 * **content:** adding awesome content ace2d1c
+* **content:** adding capital information about raspberries da8ee87
 * **content:** content ... content everywhere bfa74ab
 * **content:** still adding content ... cf2b86f
+* **content:** talking about raspberries 9ad7066
 * **global:** the first commit a486104
 
 
