@@ -6,10 +6,9 @@ var fs = require("fs");
 var conventionalChangelog = require("gulp-conventional-changelog");
 var bump = require("gulp-bump");
 var git = require("gulp-git");
+var runSequence = require("run-sequence");
 
 var argv = util.env;
-
-var bumpType = !!argv.type ? argv.env :
 
 gulp.task('bump', function(cb) {
     var type = argv.type;
@@ -71,12 +70,6 @@ gulp.task('push-tag', function(cb) {
     });
 });
 
-
-gulp.task('release', [
-    'bump',
-    'changelog',
-    'commit-changelog',
-    'create-version-tag',
-    'push-master',
-    'push-tag'
-]);
+gulp.task('release', function(cb) {
+    runSequence( 'bump', 'changelog', 'commit-changelog', 'create-version-tag', 'push-master', 'push-tag', cb);
+});
