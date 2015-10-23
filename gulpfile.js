@@ -44,15 +44,13 @@ gulp.task('changelog', ['bump'],  function() {
 gulp.task('release', ['changelog'],  function(cb) {
     gulp.src(['CHANGELOG.md', 'package.json'])
         .pipe(git.add())
-        .pipe(git.commit('chore(release): ' + pkg.version));
-
-    git.tag(pkg.version, 'release ' + pkg.version, function(err) {
-        if (err) throw err;
-    });
-
-    git.push('origin', 'master', function(err) {
-        if (err) throw err;
-    });
+        .pipe(git.commit('chore(release): ' + pkg.version))
+        .pipe(git.tag(pkg.version, 'release ' + pkg.version, function(err) {
+            if (err) throw err;
+        }))
+        .pipe(git.push('origin', 'master', function(err) {
+            if (err) throw err;
+        }));
 
     cb();
 });
