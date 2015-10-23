@@ -1,3 +1,13 @@
+<a name="1.0.15"></a>
+## [1.0.15](//compare/1.0.14...v1.0.15) (2015-10-23)
+
+
+### Bug Fixes
+
+* **release:** change gulpfile.js again 94da24c
+
+
+
 <a name="1.0.14"></a>
 ## [1.0.14](//compare/1.0.13...v1.0.14) (2015-10-23)
 
