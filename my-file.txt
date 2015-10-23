@@ -5,3 +5,4 @@ Ceci est une autre révsision.
 // Post 1.0.0
 
 Ceci est une nouvelle version mineur, on passe en 1.0.1 !
+Raté, maintenant on passe en verions 1.0.1 ...
