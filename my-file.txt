@@ -32,3 +32,5 @@ Contenu de la 1.0.8
 Ceci est du tout nouveau contenu
 
 Contenu de la 1.0.9
+
+Tout nouveau contenu
