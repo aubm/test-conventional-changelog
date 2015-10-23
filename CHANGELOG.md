@@ -1,3 +1,15 @@
+<a name="1.0.10"></a>
+## [1.0.10](//compare/1.0.9...v1.0.10) (2015-10-23)
+
+
+### Features
+
+* **content:** add awesome content 497425a
+* **content:** add other content ee55d25
+* **content:** still adding content c1ebad9
+
+
+
 <a name="1.0.9"></a>
 ## [1.0.9](//compare/v1.0.8...v1.0.9) (2015-10-23)
 
