@@ -51,19 +51,12 @@ gulp.task('create-version-tag', function(cb) {
 });
 
 gulp.task('push-master', function(cb) {
-    git.push('origin', 'master', function(err) {
-        if (err) throw err;
-        cb();
-    });
-});
-
-gulp.task('push-tag', function(cb) {
-    git.push('origin', pkg.version, function(err) {
+    git.push('origin', 'master --tags', function(err) {
         if (err) throw err;
         cb();
     });
 });
 
 gulp.task('release', function(cb) {
-    runSequence( 'bump', 'changelog', 'commit-changelog', 'create-version-tag', 'push-master', 'push-tag', cb);
+    runSequence( 'bump', 'changelog', 'commit-changelog', 'create-version-tag', 'push-master', cb);
 });
