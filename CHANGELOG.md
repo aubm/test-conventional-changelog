@@ -1,3 +1,13 @@
+<a name="1.0.13"></a>
+## [1.0.13](//compare/1.0.12...v1.0.13) (2015-10-23)
+
+
+### Features
+
+* **content:** adding new new new content b390443
+
+
+
 <a name="1.0.12"></a>
 ## [1.0.12](//compare/1.0.11...v1.0.12) (2015-10-23)
 
