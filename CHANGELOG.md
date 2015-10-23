@@ -1,5 +1,5 @@
-<a name="1.0.1"></a>
-## 1.0.1 (2015-10-23)
+<a name="1.0.2"></a>
+## 1.0.2 (2015-10-23)
 
 
 ### Features
@@ -10,6 +10,7 @@
 * **content:** add new content 734bd2a
 * **content:** add quality content 331ad49
 * **content:** content ... content everywhere bfa74ab
+* **content:** still adding content ... cf2b86f
 * **global:** the first commit a486104
 
 
