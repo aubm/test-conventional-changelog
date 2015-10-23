@@ -28,3 +28,5 @@ Et re blablabla
 Plus de contenu ...
 
 Contenu de la 1.0.8
+
+Ceci est du tout nouveau contenu
