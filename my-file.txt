@@ -26,3 +26,5 @@ Blablabla
 Et re blablabla
 
 Plus de contenu ...
+
+Contenu de la 1.0.8
