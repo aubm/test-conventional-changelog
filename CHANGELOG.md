@@ -1,3 +1,17 @@
+<a name="1.1.0"></a>
+# [1.1.0](//compare/1.0.21...v1.1.0) (2015-10-23)
+
+
+### Bug Fixes
+
+* **release:** remove npm commands 16232e9
+
+### Features
+
+* **content:** add content 3c026a4
+
+
+
 <a name="1.0.21"></a>
 ## [1.0.21](//compare/1.0.20...v1.0.21) (2015-10-23)
 
